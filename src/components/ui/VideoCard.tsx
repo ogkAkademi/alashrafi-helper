@@ -13,15 +13,37 @@ interface VideoProps {
     date: string;
     duration: string;
     category: string;
+    youtubeUrl?: string;
   };
 }
 
 const VideoCard = ({ video }: VideoProps) => {
+  const CardWrapper = ({ children }: { children: React.ReactNode }) => {
+    if (video.youtubeUrl) {
+      return (
+        <a 
+          href={video.youtubeUrl} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="video-card block rounded-xl overflow-hidden bg-card border shadow-sm hover:shadow-md"
+        >
+          {children}
+        </a>
+      );
+    }
+    
+    return (
+      <Link 
+        to={`/videos/${video.id}`}
+        className="video-card block rounded-xl overflow-hidden bg-card border shadow-sm hover:shadow-md"
+      >
+        {children}
+      </Link>
+    );
+  };
+
   return (
-    <Link 
-      to={`/videos/${video.id}`}
-      className="video-card block rounded-xl overflow-hidden bg-card border shadow-sm hover:shadow-md"
-    >
+    <CardWrapper>
       <div className="relative aspect-video">
         <img 
           src={video.thumbnail} 
@@ -50,7 +72,7 @@ const VideoCard = ({ video }: VideoProps) => {
           <span>{video.date}</span>
         </div>
       </div>
-    </Link>
+    </CardWrapper>
   );
 };
 

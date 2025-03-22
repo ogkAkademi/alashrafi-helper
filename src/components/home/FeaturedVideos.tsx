@@ -32,11 +32,12 @@ const FeaturedVideos = () => {
     {
       id: "nuclear-weapons-ww2",
       title: "الأسلحة النووية في الحرب العالمية الثانية",
-      thumbnail: "https://images.unsplash.com/photo-1433086966358-54859d0ed716",
+      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
       views: "120K",
       date: "قبل 2 أيام",
       duration: "18:24",
-      category: "الحروب العالمية"
+      category: "الحروب العالمية",
+      youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
       id: "ancient-egypt",
