@@ -39,7 +39,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2">
               <Youtube className="h-6 w-6 text-red-600" />
-              <span className="font-bold text-xl">قناة التاريخ</span>
+              <span className="font-bold text-xl">فارس</span>
             </Link>
           </div>
 
